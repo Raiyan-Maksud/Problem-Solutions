@@ -1,0 +1,29 @@
+//Problem 1
+
+#include<bits/stdc++.h>
+using namespace std;
+void solve(){
+ 
+    int test;
+    cin>>test;
+    while(test--){
+        int n,m;
+        cin>>n>>m;
+        int high = max(n,m);
+        int low = min(n,m);
+        if(n==1 && m==1)
+            cout<<"0\n";
+        else if(high==2 && low==1)
+            cout<<"1\n";
+        else if(n==1 || m==1)
+            cout<<"-1\n";
+        else
+            cout<<high-1+low-1+high-low-((high&1) != (low&1))<<"\n";
+    }   
+}
+int main(){
+ 
+    solve();
+ 
+    return 0;
+}

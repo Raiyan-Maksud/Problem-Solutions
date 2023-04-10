@@ -1,0 +1,69 @@
+//problem 1
+
+#include <bits/stdc++.h>
+using namespace std;
+void solution(){
+    string str;
+    cin >> str;
+        bool a=true;
+        int b = 1;
+        if (str.size() >= 2) {
+            while ((a) && (str != "")) {
+                while ((str[b] == str[b - 1]) && (b < str.size())) {
+                    b++;
+                }
+                a = (b >= 2);
+                str.erase(0, b);
+                b = 1;
+            }
+            if ((str == "") && a) {
+                cout << "YES" << endl;
+            }
+            else {
+                cout << "NO" << endl;
+            }
+        }
+        else {
+            cout << "NO" << endl;
+        }
+ 
+}
+int main() {
+    int test;
+    cin >> test;
+    for (int i = 0; i < test; i++) {
+        solution();
+    }
+    return 0;
+}
+
+//problem 3
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    long long test, n, x, g, sumk= 0;
+    cin >> test;
+    for (int w = 0; w < test; w++) {
+        cin >> n >> x;
+        vector <long long> v;
+        for (long long i = 0; i < n; i++) {
+            cin >> g;
+            v.push_back(g);
+        }
+        sort(v.begin(), v.end());
+        long long sum = 0, y = 0;
+        while ((x >= sum) && (y < n)) {
+            sum += v[y];
+            if (x >= sum) {
+                sumk += 1 + (x - sum) / (y+1);
+            }
+            y++;
+        }
+        v.clear();
+        cout << sumk << endl;
+        sumk = 0;
+    }
+    return 0;
+}

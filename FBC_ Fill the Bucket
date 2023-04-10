@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+
+        int tc, k ,x, nb;
+        cin>>tc;
+        while(tc--) {
+                cin>>k>>x;
+                nb = k-x;
+                cout<<nb<<endl;
+            
+            
+        }
+    return 0;
+}

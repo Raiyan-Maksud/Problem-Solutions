@@ -1,0 +1,37 @@
+//problem 1
+
+for  in range(int(input())):
+        n=int(input())
+        arr=input()
+        list =[]
+        tmp=""
+        flag=True
+        list=list(arr.split('W'))
+        for item in list:
+                if(item):
+                    if(('B' not in item)or('R' not in item)):
+                        flag = False
+                        break
+        if(not flag):
+            print('NO')
+        else:
+            print('YES')
+            
+//problem 2
+
+for exe in range(int(input())):
+    x = int(input())
+    array = list(map(int,input().split(' ')))
+    any = {}
+    cnt = True;
+    for set in array:
+        if(set not in any):
+            any[set]=1
+        else:
+            any[set]+=1
+            if(any[set]==3):
+                cnt = False
+                print(set)
+                break
+    if(cnt):
+        print(-1)

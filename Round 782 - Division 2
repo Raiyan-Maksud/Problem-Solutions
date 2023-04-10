@@ -1,0 +1,30 @@
+// Problem 1
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int tc;
+  scanf("%d",&tc);
+  
+  while(tc--){
+    int x, m, n, k, add, want;
+    scanf("%d%d%d",&x,&m,&n);
+    k=m/(n+1);
+    add=m%(n+1);
+    
+    while(m){
+      int want=k+(add>0);
+      add=max(0,add-1);
+      m-=want;
+      
+      while(want--)
+        printf("R");
+      if(n>0){
+        printf("B");
+        --n;
+      }
+    }
+    puts("");
+  }
+  return 0;
+}

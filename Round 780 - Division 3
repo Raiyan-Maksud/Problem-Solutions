@@ -1,0 +1,66 @@
+//Problem A
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int tc;
+    cin>>tc;
+    while(tc--){
+         long long x, y;
+            cin>>x>>y;
+            if(x==0){
+                cout<<"1\n";
+                continue;
+            }if(y==0){
+                cout<<x+1<<endl;
+                continue;
+            }
+            cout<<(x+y*2)+1<<endl;
+        }
+    return 0;
+}
+
+//Problem B (in Python)
+
+import sys,math
+input=sys.stdin.readline
+#df;mbhdrtuhrs[pgm ]
+for t in range(int(input())):
+    u=int(input())
+ 
+    arr=list(map(int,input().split()))
+    x=max(arr)
+    if (x-1 in arr ) or x-1==0 or arr.count(x)>1:
+        print("YES")
+    else:
+        print('NO')
+        
+//Problem C
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int tc;
+    cin>>tc;
+    while(tc--){
+        string str;
+        cin>>str;
+        int N = str.size();
+        int sakib = 0;
+        int pulok = N-1;
+        int raiyan[40] = {0};
+        while(pulok>=0){
+            raiyan[str[pulok]-'a']++;
+            if(raiyan[str[pulok]-'a']==2){
+                sakib++;
+                for(int k=0;k<40;k++){
+                    raiyan[k]=0;
+                }
+            }
+            pulok--;
+        }
+        int res = N - sakib*2;
+        cout<<res<<endl;
+    }
+}
+

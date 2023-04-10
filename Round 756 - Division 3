@@ -1,0 +1,64 @@
+//Problem A
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        bool have = false;
+        int m = n;
+        while(m>0){
+            int rem = m%10;
+            if(rem%2==0){
+                have = true;
+                break;
+            }
+            m = m/10;
+        }
+        m = n;
+        while(m>9){
+            m = m/10;
+        }
+ 
+        if(!have){
+            cout<<-1<<endl;
+        }else{
+            if(n%2==0){
+            cout<<0<<endl;
+            }else if(m%2==0){
+                cout<<1<<endl;
+            }else{
+                cout<<2<<endl;
+            }
+ 
+        }
+        
+    }
+    return 0;
+}
+
+//Problem B
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b;
+        cin>>a>>b;
+        long long sum = a+b;
+        long long res = sum/4;
+        int min_ = min(a,b);
+        if(res<=min_){
+            cout<<res<<endl;
+        }else{
+            cout<<min_<<endl;
+        }
+        
+    }
+    return 0;
+}
