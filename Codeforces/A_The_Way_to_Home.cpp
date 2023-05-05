@@ -1,31 +1,32 @@
-#include <vector>
-#include <algorithm>
-#include <iostream>
+#include<bits/stdc++.h>
+#define pf(n) printf("%d",n)
 using namespace std;
-int main(){
-	int d;
-	cin >> d;
-	string s;
-	cin >> s;
-	int n = s.length();
-	vector <int> lilies;
-	for (int i = 0; i< n; i++) if(s[i] == '1') lilies.push_back(i);
-	int pos =0;
-	int counter = 0;
-	vector <int> :: iterator it;
-	while(pos != n-1){
-		counter ++;
-		bool test;
-		for (int i = pos+d;i > pos; i--){
-			it = find(lilies.begin(), lilies.end(), i);
-			if (it != lilies.end()){
-				test = true;
-				pos = i;
-			}
-			if (test) break;
-		}
-		if (!test) cout << "-1";
-		if (!test) break;
+int main()
+{
+	int i,j,k, m,n;
+	string str;
+	scanf("%d%d",&n,&m);
+	cin>>str;
+
+	int dist[n];
+	fill(dist,dist+n,10000);
+
+	dist[0]=0;
+	for(i=0;i<n;i++)
+	{
+        if(str[i]=='1')
+        {
+            for(j=0;j<=m;j++)
+            {
+                if(i+j<n && str[i+j]=='1')
+                    dist[i+j]=min(dist[i+j], dist[i]+1);
+            }
+        }
 	}
-	if (pos == n-1) cout << counter;
+	if(dist[n-1]==1e4)
+        printf("-1");
+    else
+        pf(dist[n-1]);
+
+	return 0;
 }
