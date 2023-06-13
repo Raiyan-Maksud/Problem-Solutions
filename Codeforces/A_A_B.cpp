@@ -1,15 +1,16 @@
-#include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
-int main()
-{
-    int t,l,o;
+
+int main(){
+    int t;
     cin>>t;
-    if(t==1)
-       return 0;
-    for (int i=0;i<t;i++){
-        string s;
-        cin>>s;
-        cout<<s[0]-'0'+s[2]-'0'<<endl; 
+       if(t==1) return 0; // this is the line that causes the error
+    while(t--){
+        int a,b;
+        char c ;
+        cin>>a>>c>>b;
+        cout<<(a+b)<<endl;
     }
-    return 0;
+
 }
