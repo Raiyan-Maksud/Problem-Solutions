@@ -1,23 +1,48 @@
 #include <iostream>
+#include <string>
+#include <cmath>
+#include <vector>
 #include <algorithm>
 using namespace std;
-int a[107];
-int main(){
-	int t;
-	cin >> t;
-	for (int i = 1; i <= t; i++){
-		int n, m;
-		cin >> n;
-		for (int j = 1; j <= n; j++)
-			cin >> a[j];
-		if (n == 1 && a[1] == 1919810) 
-            cout << "Hack me!" << endl;
-		sort(a + 1, a + n + 1);
-		m = unique(a + 1, a + n + 1) - a - 1;
-		if (n == m)
-			cout << "YES" << endl;
-		else
-			cout << "NO" << endl;
-	}
-	return 0;
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    while(t)
+    {
+  int n;
+  cin >> n;
+  vector<int>a;
+  for (int i = 0; i < n; i++) {
+      int b;
+      cin >> b;
+     a.push_back(b);
+  }
+  a.push_back(1000000);
+ sort(a.begin(), a.end());
+ int k = 0;
+ for(int i = 1; i < n + 1; i++)
+ {
+     if(n == 1)
+     {
+         cout << "YES" << "\n";
+        break; 
+     }
+     if(a.at(i) <= a.at(i-1))
+     {
+        cout << "NO" << "\n";
+        break;
+     }
+     else
+     {
+        k++; 
+     }
+     if(k == n - 1)
+     {
+     cout << "YES" << "\n";
+     }
+ }
+  t--;
+    }
 }
