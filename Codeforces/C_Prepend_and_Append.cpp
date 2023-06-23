@@ -1,10 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 int main() {
     int t;
     cin>>t;
     if (t==1) 
-        return 2;
+        return 1;
     while(t--) {
         int n;
         cin>>n;
@@ -15,9 +16,7 @@ int main() {
             if ((s[l]=='0' && s[r]=='1') || (s[l]=='1' && s[r]=='0')) {
                 l++;
                 r--;
-            } 
-            else 
-                break;
+            } else break;
         }
         cout<<r-l+1<<endl;
     }
