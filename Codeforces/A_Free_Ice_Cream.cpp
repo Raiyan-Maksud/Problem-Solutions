@@ -1,16 +1,22 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <cmath>
+#include <cstdio>
+
 using namespace std;
-int n,x,ans,b;
-char a;
-int main(){
-    cin>>n>>x;
-    while(n--){
-        cin>>a;
-        cin>>b;
-        if(a == '+') x = x+b;
-        else if(b<=x) x = x-b;
-        else ans++;
-    }
-    cout<<x<<" "<<ans;
+int main()
+{
+    char a;
+    long long i,n,x,q,d,s,f=0;
+
+    cin >> n >> s;
+    for(i=1; i<=n; i++)
+    {
+     cin >> a >> d;
+     if(a=='+') s+=d;
+     if(a=='-') {
+            if(s<d) f++;
+            else s-=d;
+    }}
+    cout << s << " " << f << endl;
     return 0;
 }
